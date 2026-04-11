@@ -1,0 +1,70 @@
+export default function HelpResourcesLandingPage() {
+  const cards = [
+    {
+      title: "Food Assistance",
+      description:
+        "I found this while trying to figure out what support options were actually worth checking. It felt a lot easier to start with one simple page instead of searching everywhere.",
+      href: "https://trksy.org/aff_c?offer_id=2302&aff_id=164144",
+      button: "Check food support",
+    },
+    {
+      title: "Credit Card Assistance",
+      description:
+        "This is one of the options I came across when looking into ways to reduce financial pressure. It is a simple place to look at possible next steps.",
+      href: "https://giftclick.org/aff_c?offer_id=2301&aff_id=164144",
+      button: "View credit card help",
+    },
+    {
+      title: "AI Jobs",
+      description:
+        "I added this for people trying to find online opportunities without digging through endless posts. It is worth a look if you are exploring AI-related work.",
+      href: "https://linkthem.net/aff_c?offer_id=4381&aff_id=164144",
+      button: "Explore AI jobs",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-neutral-950 text-white">
+      <div className="mx-auto max-w-5xl px-6 py-12 md:py-20">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="mb-4 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-1 text-sm text-white/70">
+            Simple resources in one place
+          </p>
+          <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
+            A few helpful links I wish I found sooner
+          </h1>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-white/70 md:text-lg">
+            I put these together in one page because searching for real help online can feel messy.
+            These are a few options I came across for food support, credit card relief, and AI job
+            opportunities.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {cards.map((card) => (
+            <div
+              key={card.title}
+              className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/20 backdrop-blur"
+            >
+              <div className="mb-4 inline-flex rounded-2xl bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-white/60">
+                Resource
+              </div>
+              <h2 className="text-2xl font-semibold">{card.title}</h2>
+              <p className="mt-4 text-sm leading-6 text-white/70">{card.description}</p>
+              <a
+                href={card.href}
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+                className="mt-6 inline-flex w-full items-center justify-center rounded-2xl bg-white px-4 py-3 text-sm font-medium text-neutral-950 transition hover:scale-[1.01]"
+              >
+                {card.button}
+              </a>
+            </div>
+          ))}
+        </div>
+
+        
+      </div>
+    </div>
+  );
+}
